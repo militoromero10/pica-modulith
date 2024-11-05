@@ -1,0 +1,39 @@
+spring:
+  application:
+  name: modulith
+  jpa:
+    hibernate:
+      ddl-auto: create-drop # validate
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always #never
+  datasource:
+    url: jdbc:h2:file:./data/pica
+    driverClassName: org.h2.Driver
+    username: sa
+    password: prueba123
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings.trace: false
+      settings.web-allow-others: false
+
+  modulith:
+    republish-outstanding-events-on-restart: false
+  #  datasource:
+  #    username: ${MODULITH_USERNAME}
+  #    password: ${MODULITH_PASSW}
+  #    url: jdbc:h2:file:/data/pica
+
+#  docker:
+#    compose:
+#      skip:
+#        in-tests: false
+#
+logging:
+  level:
+    org.springframework.modulith: DEBUG
+  profiles:
+    active: dev
