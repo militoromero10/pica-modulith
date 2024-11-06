@@ -9,7 +9,7 @@ spring:
     init:
       mode: always #never
   datasource:
-    url: jdbc:h2:file:./data/pica
+    url: ${URL_PICA:jdbc:h2:file:./data/pica}
     driverClassName: org.h2.Driver
     username: sa
     password: prueba123
